@@ -1,4 +1,4 @@
-const covid19ImpactEstimator = (data, impact, severeImpact) => (
+const covid19ImpactEstimator = (data) => (
   {
     data: {
       region: {
@@ -11,16 +11,17 @@ const covid19ImpactEstimator = (data, impact, severeImpact) => (
       timeToElapse: 58,
       reportedCases: 674,
       population: 66622705,
-      totalHospitalBeds: 1380614
-    }, // the input data you got
-    impact: {
-      currentlyInfected: data.reportedCases * 10,
-      infectionsByRequestedTime: impact.currentlyInfected * 512
+      totalHospitalBeds: 1380614,
 
-    },
-    severeImpact: {
-      currentlyInfected: data.reportedCases * 50,
-      infectionsByRequestedTime: severeImpact.currentlyInfected * 512
+      impact: {
+        currentlyInfected: data.reportedCases * 10,
+        infectionsByRequestedTime: data.reportedCases * 10 * 512
+
+      },
+      severeImpact: {
+        currentlyInfected: data.reportedCases * 50,
+        infectionsByRequestedTime: data.reportedCases * 50 * 512
+      }
     }
   });
 
