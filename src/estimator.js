@@ -1,3 +1,4 @@
+
 const covid19ImpactEstimator = (data) => (
   {
     // data: {
@@ -14,37 +15,36 @@ const covid19ImpactEstimator = (data) => (
     //   totalHospitalBeds: 1380614,
 
     impact: {
-      currentlyInfected() {
-        return data.reportedCases * 10;
-      },
-      infectionsByRequestedTime() {
-        return this.currentlyInfected * 512;
-      },
-      severeCasesByRequestedTime() {
-        return this.infectionsByRequestedTime * 0.15;
-      },
-
-      hospitalBedsByRequestedTime() {
-        return data.totalHospitalBeds - this.severeCasesByRequestedTime;
-      }
-
-
+      currentlyInfected:
+      data.reportedCases * 10,
+      infectionsByRequestedTime:
+      data.reportedCases * 10 * 512,
+      severeCasesByRequestedTime:
+       (data.reportedCases * 10 * 512) * 0.15,
+      hospitalBedsByRequestedTime:
+      data.totalHospitalBeds - ((data.reportedCases * 10 * 512) * 0.15),
+      casesForICUByRequestedTime:
+      (data.reportedCases * 10 * 512) * 0.05,
+      casesForVentilatorsByRequestedTime:
+      (data.reportedCases * 10 * 512) * 0.02,
+      dollarsInFlight:
+       (data.reportedCases * 10 * 512) * 30 * 1.5 * 0.65
     },
     severeImpact: {
-      currentlyInfected() {
-        return data.reportedCases * 50;
-      },
-      infectionsByRequestedTime() {
-        return this.currentlyInfected * 512;
-      },
-      severeCasesByRequestedTime() {
-        return this.infectionsByRequestedTime * 0.15;
-      },
-
-      hospitalBedsByRequestedTime() {
-        return data.totalHospitalBeds - this.severeCasesByRequestedTime;
-      }
-
+      currentlyInfected:
+      data.reportedCases * 50,
+      infectionsByRequestedTime:
+       data.reportedCases * 50 * 512,
+      severeCasesByRequestedTime:
+      (data.reportedCases * 50 * 512) * 0.15,
+      hospitalBedsByRequestedTime:
+       data.totalHospitalBeds - ((data.reportedCases * 50 * 512) * 0.15),
+      casesForICUByRequestedTime:
+      (data.reportedCases * 50 * 512) * 0.05,
+      casesForVentilatorsByRequestedTime:
+       (data.reportedCases * 50 * 512) * 0.02,
+      dollarsInFlight:
+      (data.reportedCases * 50 * 512) * 30 * 1.5 * 0.65
     }
   });
 
