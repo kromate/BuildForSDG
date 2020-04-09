@@ -18,33 +18,33 @@ const covid19ImpactEstimator = (data) => (
       currentlyInfected:
       data.reportedCases * 10,
       infectionsByRequestedTime:
-      data.reportedCases * 10 * 1024,
+      data.reportedCases * 10 * 524288,
       severeCasesByRequestedTime:
-       (data.reportedCases * 10 * 1024) * 0.15,
+       (data.reportedCases * 10 * 524288) * 0.15,
       hospitalBedsByRequestedTime:
-      data.totalHospitalBeds - ((data.reportedCases * 10 * 1024) * 0.15),
+      data.totalHospitalBeds - ((data.reportedCases * 10 * 524288) * 0.15),
       casesForICUByRequestedTime:
-      (data.reportedCases * 10 * 1024) * 0.05,
+      (data.reportedCases * 10 * 524288) * 0.05,
       casesForVentilatorsByRequestedTime:
-      (data.reportedCases * 10 * 1024) * 0.02,
+      (data.reportedCases * 10 * 524288) * 0.02,
       dollarsInFlight:
-       (data.reportedCases * 10 * 1024) * 30 * 1.5 * 0.65
+       (data.reportedCases * 10 * 524288) * 30 * 1.5 * 0.65
     },
     severeImpact: {
       currentlyInfected:
       data.reportedCases * 50,
       infectionsByRequestedTime:
-       data.reportedCases * 50 * 1024,
+       data.reportedCases * 50 * 524288,
       severeCasesByRequestedTime:
-      (data.reportedCases * 50 * 1024) * 0.15,
+      (data.reportedCases * 50 * 524288) * 0.15,
       hospitalBedsByRequestedTime:
-       data.totalHospitalBeds - ((data.reportedCases * 50 * 1024) * 0.15),
+       data.totalHospitalBeds - ((data.reportedCases * 50 * 524288) * 0.15),
       casesForICUByRequestedTime:
-      (data.reportedCases * 50 * 1024) * 0.05,
+      (data.reportedCases * 50 * 524288) * 0.05,
       casesForVentilatorsByRequestedTime:
-       (data.reportedCases * 50 * 1024) * 0.02,
+       (data.reportedCases * 50 * 524288) * 0.02,
       dollarsInFlight:
-      (data.reportedCases * 50 * 1024) * 30 * 1.5 * 0.65
+      (data.reportedCases * 50 * 524288) * 30 * 1.5 * 0.65
     }
   });
 
