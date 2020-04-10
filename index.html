@@ -4,11 +4,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="Corona-Virus Estimator" content="width=device-width, initial-scale=1.0">
+    <script src="./src/estimator.js"></script>
     <title>Covid-19 Estimator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
 </head>
 
-<body>
-    <script src="./src/estimator.js"></script>
+<body class="bg-secondary ">
+    <div class="container-fluid text-white bg-dark mt-5 p-5">
+        <div class="row">
+            <form class="col-3">
+                <div class="form-group">
+                    <label for="Population"> Population</label>
+                    <input type="text" class="form-control" id=" data-population" aria-describedby=""
+                        placeholder="Enter the current Population">
+                </div>
+                <div class="form-group">
+                    <label for="timeToElapse">Time to Elapse</label>
+                    <input type="text" class="form-control" id="data-time-to-elapse" placeholder="Enter Time To Elapse">
+                </div>
+                <div class="form-group">
+                    <label for="reportedCases">Reported Cases</label>
+                    <input type="text" class="form-control" id="exampleInputtext1" placeholder="Enter reported Cases">
+                </div>
+                <div class="form-group">
+                    <label for="totalHospitalBeds">totalHospitalBeds</label>
+                    <input type="text" class="form-control" id="exampleInputtext1" placeholder="Enter Total Hospital Beds">
+                </div>
+                <label for="period type">Period-Type</label>
+                <select class="form-control " id="data-period-type">
+                    <option id="days">days</option>
+                    <option id="weeks">weeks</option>
+                    <option id="months">Months</option>
+
+                </select>
+
+                <button type="submit" class="btn btn-primary mt-5" id="data-go-estimate">Submit</button>
+            </form>
+
+
+            <div class="col-4 bg-white m-2 text-dark" >
+                <h4 class="">Here are your results for <span class="font-weight-bold">Impact</span></h4>
+                <br>
+                <h5>currentlyInfected<br><span id="outputforcurrentlyInfected">shit</span></h5>
+                <br>
+                <h5>infectionsByRequestedTime<br><span id="outputforinfectionsByRequestedTime">shit</span> </h5>
+                <br>
+                <h5>severeCasesByRequestedTime<br><span id="outputforsevereCasesByRequestedTime">shit</span> </h5>
+                <br>
+                <h5>hospitalBedsByRequestedTime<br><span id="outputforhospitalBedsByRequestedTime">shit</span> </h5>
+                <br>
+                <h5>ICUByRequestedTime<br><span id="outputforcasesForICUByRequestedTime">shit</span> </h5>
+                <br>
+                <h5>VentilatorsByRequestedTime<br><span id="outputforcasesForVentilatorsByRequestedTime">shit</span> </h5>
+                <br>
+                <h5>dollarsInFlight<br><span id="outputfordollarsInFlight">shit</span> </h5>
+            </div>
+            <div class="col-4 bg-white m-2 text-danger" >
+                <h4 class="">Here are your results for <span class="font-weight-bold">Severe Impact</span></h4>
+                <br>
+                <h5>currentlyInfected<br><span id="outputforcurrentlyInfected2">shit</span></h5>
+                <br>
+                <h5>infectionsByRequestedTime <br> <span id="outputforinfectionsByRequestedTime2">shit</span> </h5>
+                <br>
+                <h5>severeCasesByRequestedTime<br><span id="outputforsevereCasesByRequestedTime2">shit</span> </h5>
+                <br>
+                <h5>hospitalBedsByRequestedTime<br><span id="outputforhospitalBedsByRequestedTime2">shit</span> </h5>
+                <br>
+                <h5>ICUByRequestedTime<br><span id="outputforcasesForICUByRequestedTime2">shit</span> </h5>
+                <br>
+                <h5>VentilatorsByRequestedTime<br><span id="outputforcasesForVentilatorsByRequestedTime2">shit</span> </h5>
+                <br>
+                <h5>dollarsInFlight<br><span id="outputfordollarsInFlight2">shit</span> </h5>
+            </div>
+        </div>
+    </div>
+
+
 
 </body>
 
