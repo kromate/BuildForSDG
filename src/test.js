@@ -54,9 +54,9 @@ const covid19ImpactEstimator = (data) => (
       (data.reportedCases * 50 * 524288) * 30 * 1.5 * 0.65
     }
   },
-  function per((data.periodType)) { 
+  // function per(data.periodType)) { 
     
-  });
+  // });
 
 
 
