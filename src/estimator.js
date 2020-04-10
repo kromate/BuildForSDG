@@ -39,30 +39,30 @@ const covid19ImpactEstimator = (data) => {
   result.impact.infectionsByRequestedTime = (
     result.impact.currentlyInfected * infectionsByRequestedTime(timeToElapse).multiplier
   );
-  result.severeImpact.infectionsByRequestedTime = (
-    result.severeImpact.currentlyInfected * infectionsByRequestedTime(timeToElapse).multiplier
+  result.severeImpact.infectionsByRequestedTime = Math.trunc((
+    result.severeImpact.currentlyInfected * infectionsByRequestedTime(timeToElapse).multiplier)
   );
   result.impact.severeCasesByRequestedTime = result.impact.infectionsByRequestedTime * 0.15;
   result.severeImpact.severeCasesByRequestedTime = (
     result.severeImpact.infectionsByRequestedTime * 0.15
   );
-  result.impact.hospitalBedsByRequestedTime = (
-    (0.35 * totalHospitalBeds) - result.impact.severeCasesByRequestedTime
+  result.impact.hospitalBedsByRequestedTime = Math.trunc((
+    (0.35 * totalHospitalBeds) - result.impact.severeCasesByRequestedTime)
   );
-  result.severeImpact.hospitalBedsByRequestedTime = (
-    (0.35 * totalHospitalBeds) - result.severeImpact.severeCasesByRequestedTime
+  result.severeImpact.hospitalBedsByRequestedTime = Math.trunc((
+    (0.35 * totalHospitalBeds) - result.severeImpact.severeCasesByRequestedTime)
   );
-  result.impact.casesForICUByRequestedTime = (
-    result.impact.infectionsByRequestedTime * 0.05
+  result.impact.casesForICUByRequestedTime = Math.trunc((
+    result.impact.infectionsByRequestedTime * 0.05)
   );
-  result.severeImpact.casesForICUByRequestedTime = (
-    result.severeImpact.infectionsByRequestedTime * 0.05
+  result.severeImpact.casesForICUByRequestedTime = Math.trunc((
+    result.severeImpact.infectionsByRequestedTime * 0.05)
   );
-  result.impact.casesForVentilatorsByRequestedTime = (
-    result.impact.infectionsByRequestedTime * 0.02
+  result.impact.casesForVentilatorsByRequestedTime = Math.trunc((
+    result.impact.infectionsByRequestedTime * 0.02)
   );
-  result.severeImpact.casesForVentilatorsByRequestedTime = (
-    result.severeImpact.infectionsByRequestedTime * 0.02
+  result.severeImpact.casesForVentilatorsByRequestedTime = Math.trunc((
+    result.severeImpact.infectionsByRequestedTime * 0.02)
   );
   result.impact.dollarsInFlight = (
     (
