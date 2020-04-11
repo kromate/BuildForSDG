@@ -41,22 +41,24 @@ const covid19ImpactEstimator = (data) => {
   );
   result.severeImpact.infectionsByRequestedTime = Math.trunc((
     result.severeImpact.currentlyInfected * infectionsByRequestedTime(timeToElapse).multiplier));
-  result.impact.severeCasesByRequestedTime = result.impact.infectionsByRequestedTime * (15/100);
+  result.impact.severeCasesByRequestedTime = result.impact.infectionsByRequestedTime * (15 / 100);
   result.severeImpact.severeCasesByRequestedTime = (
-    result.severeImpact.infectionsByRequestedTime * (15/100)
+    result.severeImpact.infectionsByRequestedTime * (15 / 100)
   );
   result.impact.hospitalBedsByRequestedTime = Math.trunc((
-    ((35/100) * totalHospitalBeds) - result.impact.severeCasesByRequestedTime));
+    ((35 / 100) * totalHospitalBeds) - result.impact.severeCasesByRequestedTime));
   result.severeImpact.hospitalBedsByRequestedTime = Math.trunc((
-    ((35/100) * totalHospitalBeds) - result.severeImpact.severeCasesByRequestedTime));
+    ((35 / 100) * totalHospitalBeds) - result.severeImpact.severeCasesByRequestedTime));
   result.impact.casesForICUByRequestedTime = Math.trunc((
-    result.impact.infectionsByRequestedTime * (5/100)));
+    result.impact.infectionsByRequestedTime * (5 / 100)));
   result.severeImpact.casesForICUByRequestedTime = Math.trunc((
-    result.severeImpact.infectionsByRequestedTime * (5/100)));
+    result.severeImpact.infectionsByRequestedTime * (5 / 100)));
   result.impact.casesForVentilatorsByRequestedTime = Math.floor(
-    result.impact.infectionsByRequestedTime * (2/100));
+    result.impact.infectionsByRequestedTime * (2 / 100)
+  );
   result.severeImpact.casesForVentilatorsByRequestedTime = Math.floor(
-    result.severeImpact.infectionsByRequestedTime * (2/100));
+    result.severeImpact.infectionsByRequestedTime * (2 / 100)
+  );
   result.impact.dollarsInFlight = (
     (
       result.impact.infectionsByRequestedTime * region.avgDailyIncomePopulation)
