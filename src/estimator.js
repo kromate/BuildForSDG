@@ -1,6 +1,6 @@
 const trunc = (number) => Math.trunc(number);
-const powerOfTwo = (number) => trunc(2 ** number);
-const normaliseDuration = (timeToElapse, periodType) => {
+const X2 = (number) => trunc(2 ** number);
+const normalDuration = (timeToElapse, periodType) => {
   const timeToElapsed = Number(timeToElapse);
   let period;
 
@@ -42,10 +42,10 @@ const estimator = (data, mutiplier) => {
   const USDEarn = Number(avgDailyIncomeInUSD);
 
   // normalise days,weeks, months and even years into days
-  const days = normaliseDuration(timeToElapse, periodType);
+  const days = normalDuration(timeToElapse, periodType);
   const factor = trunc(days / 3);
   const currentlyInfected = trunc(Number(reportedCases) * Number(mutiplier));
-  const infectionsByRequestedTime = trunc((currentlyInfected * powerOfTwo(factor)));
+  const infectionsByRequestedTime = trunc((currentlyInfected * X2(factor)));
 
   const severeCasesByRequestedTime = trunc(infectionsByRequestedTime * needToRecover);
   const hBBRT = trunc((Number(totalHospitalBeds) * bed) - severeCasesByRequestedTime);
