@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="Corona-Virus Estimator" content="width=device-width, initial-scale=1.0">
-    <script src="./src/estimator.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Covid-19 Estimator">
     <title>Covid-19 Estimator</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,17 +18,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <style>
-        @media screen and (max-width: 480px) {
-            #media { 
-                font-size: 18px;
-            }}
-    </style>
+
 
 
 </head>
 
-<body class="bg-secondary ">
+<body class="bg-secondary " style="font-size: 18px;">
     <div class="container-fluid text-white bg-dark mt-5 p-5">
         <div class="row">
             <form class="col-3">
@@ -58,11 +53,11 @@
 
                 </select>
 
-                <button type="submit" class="btn btn-primary mt-5" id="data-go-estimate">Submit</button>
+                <button type="submit" class="btn btn-danger mt-5" id="data-go-estimate" >Submit</button>
             </form>
 
 
-            <div class="col-4 bg-white m-2 text-dark" id="media">
+            <div class="col-4 bg-white m-2 text-dark" id="media 2">
                 <h4 class="">Here are your results for <span class="font-weight-bold">Impact</span></h4>
                 <br>
                 <h5>currentlyInfected<br><span id="outputforcurrentlyInfected">shit</span></h5>
@@ -80,7 +75,7 @@
                 <br>
                 <h5>dollarsInFlight<br><span id="outputfordollarsInFlight">shit</span> </h5>
             </div>
-            <div class="col-4 bg-white m-2 text-danger" id="media">
+            <div class="col-4 bg-white m-2 text-danger" id="med">
                 <h4 class="">Here are your results for <span class="font-weight-bold">Severe Impact</span></h4>
                 <br>
                 <h5>currentlyInfected<br><span id="outputforcurrentlyInfected2">shit</span></h5>
